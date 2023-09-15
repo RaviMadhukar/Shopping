@@ -1,18 +1,20 @@
-const bar =document.getElementById('bar');
-const close =document.getElementById('close');
-const nav = document.getElementById('navbar');
+var sidemuneu = document.getElementById("sidemenu");
 
-if(bar){
-    bar.addEventListener('click', ()=>{
-        nav.classList.add('active');
-    })
+function openmenu() {
+    sidemuneu.style.right = "0";
+    sidemuneu.style.display = "block";
+    document.getElementById("openn").classList.remove("active-bar");
+    document.getElementById("closee").classList.add("active-bar");
+
 }
 
-if(close){
-    close.addEventListener('click', ()=>{
-        nav.classList.remove('active');
-    })
+function closemenu() {
+    sidemuneu.style.right = "-300px";
+	sidemuneu.style.display = "none";
+        document.getElementById("closee").classList.remove("active-bar");
+        document.getElementById("openn").classList.add("active-bar");
 }
+
 
 function drydhoop(){
     open("DryDhoop.html");

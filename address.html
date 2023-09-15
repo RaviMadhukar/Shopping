@@ -13,21 +13,42 @@
 </head>
 
 <body>
+    
     <section id="header">
-        <a href="index.html"><img src="image/logo.jpg" class="logo"></a>
-        <div>
-            <ul id="navbar">
-                <i id="close" class="fa fa-times" aria-hidden="true"></i>
+        <a href="index.html"><img src="image/logo.png" class="logo"></a>
+        <nav class="navbar">
+            <ul class="navlink" id="sidemenu">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="shop.html">Shop</a></li>
+                <li><a href="#">Shop</a>
+                    <ul>
+                        <li><a href="#">Puja Incense</a>
+                            <ul>
+                                <li><a href="#">Herbal</a></li>
+                                <li><a href="#">Herbal</a></li>
+                                <li><a href="#">Herbal</a></li>
+                                <li><a href="#">Herbal</a></li>
+                                <li><a href="#">Herbal</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Mosquito Incense</a>
+                            <ul>
+                                <li><a href="#">Dhoop</a></li>
+                                <li><a href="#">Dhoop</a></li>
+                                <li><a href="#">Dhoop</a></li>
+                                <li><a href="#">Dhoop</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Backflow Incense</a></li>
+                        <li><a href="#">Brass Incense Stands</a></li>
+                    </ul>
+                </li>
                 <li><a href="blog.html">Blog</a></li>
-                <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html">About US</a></li>
             </ul>
-        </div>
-        <div id="mobile">
-            <i id="bar" class="fas fa fa-outdent" aria-hidden="true"></i> 
-        </div>
+            <i class="fas fa-bars active-bar" onclick="openmenu()" id="openn"></i>
+            <i class="fas fa-times" onclick="closemenu()" id="closee"></i>
+        </nav>
     </section>
 
     <section id="pageheader">

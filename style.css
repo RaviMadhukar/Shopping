@@ -62,100 +62,56 @@ body {
     height: 70px;
 }
 
-nav{
-    position: relative;
-    width: 100%;
+#header .navbar ul{
+    list-style: none;
 }
 
-.navbar{
+#header .navbar ul li{
     position: relative;
-    padding: 0 30px;
-    width: 100%;
-    height: 70px;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: right;
+    float: left;
+    padding: 10px;
 }
 
-img{
+#header .navbar ul li a{
+    font-size: 25px;
+    padding: 10px;
+    color: black;
+    font-weight: 900;
+    display: block;
+    text-decoration: none;
+    border-radius: 20px;
+}
+
+#header .navbar ul li a:hover{
+    color: white;
+    background-color: rgba(167, 73, 30, 0.863);
+}
+
+#header .navbar ul li ul{
+    position: absolute;
+    right: 0;
+    width: 300px;
     display: none;
 }
 
-.nav-link{
-    display: flex;
-}
-
-.nav-link li{
-    list-style: none;
-    margin-left: 10px;
-}
-
-.nav-link li a{
-    color: black;
-    text-decoration: none;
-    font-size: 22px;
-    font-weight: 800;
-    padding: 9px 20px;
-    border-radius: 5px;
-    transition: all 0.4s ease;
-}
-
-.nav-link li a:hover{
-    color: #ddd;
-    background-color: rgba(153, 205, 50, 0.811);
-}
-
-.mega-box{
-    position: absolute;
-    left: 0;
+#header .navbar ul li ul li{
     width: 100%;
-    padding: 0 30px;
-    top: 80px;
-    opacity: 0;
-    visibility: hidden;
+    background-color: rgba(235, 223, 208, 0.792);
+    top: 20px;
 }
 
-.nav-link li:hover .mega-box{
-    transition: all 0.7s;
-    transform: translateX(20px);
-    opacity: 1;
-    visibility: visible;
+#header .navbar ul li ul li a{
+    font-size: 18px;
+    padding: 10px 20px;
 }
 
-.mega-box li a{
-    padding: 0 20px;
-    font-size: 19px;
-    display: inline-block;
-    width: 80%;
+#header .navbar ul li ul li ul{
+    right: 300px;
+    top: -20px;
 }
 
-.content{
-    background: linear-gradient(rgba(191, 158, 98, 0.863),rgba(197, 93, 14, 0.789));
-    border: 10px;
-    padding: 25px 40px;
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    border-radius: 50px;
-}
-
-.main{
-    width: 25%;
-    line-height: 45px;
-}
-
-.main p{
-    color: black;
-    font-size: 30px;
-    font-weight: 900;
-}
-
-img{
-    display: block;
-    width: 100%;
-    height: 100%;
-    border-radius: 50px;
+#header .navbar ul li:hover > ul{
+    display: initial;
 }
 
 .logo{
@@ -166,37 +122,38 @@ img{
 
 /* ___________________________Home Page____________________ */
 
-.mid{
-    width: 90%;
-    height: 600px;
-    background-image: url("image/mid1.png");
-    background-size: 100% 100%;
-    margin-top: 100px;
+#slider{
+    max-width: 90%;
+    max-height: 600px;
+    overflow: hidden;
     margin-left: 5%;
-    animation: changeImg 100s linear infinite;
-    border-radius: 50px;
-    box-shadow: 20px 40px 20px rgb(134, 101, 39);
+    margin-top: 100px;
+    box-shadow: 1px 10px 5px brown;
+    border-radius: 10px;
 }
 
-@keyframes changeImg{
-    0%{
-        background-image: url("image/mid1.png");
-    }
-    25%{
-        background-image: url("image/mid2.png");
-    }
-    50%{
-        background-image: url("image/mid3.png");
-    }
-    75%{
-        background-image: url("image/mid4.png");
-    }
-    98%{
-        background-image: url("image/mid5.png");
-    }
-    100%{
-        background-image: url("image/mid1.png");
-    }
+#slider figure{
+    position: relative;
+    width: 500%;
+    height: 100%;
+    margin-left: 0%;
+    animation: 20s slide-animation infinite;
+}
+
+#slider figure img{
+    width: 20%;
+    height: 100%;
+    float: left;
+} 
+
+@keyframes slide-animation{
+     0%{ left: 0;}
+    17%{ left: 0;}
+    34%{ left: -100%;}
+    51%{ left: -100%;}
+    68%{ left: -200%;}
+    85%{ left: -200%;}
+   100%{ left: -300%;}
 }
 
 /* _____________________________________feature box_________________________________ */
@@ -208,7 +165,7 @@ img{
 }
 
 #feature .fe-box{
-    width: 250px;
+    max-width: 250px;
     align-items: center;
     box-shadow: 20px 20px 34px rgb(191,159,98);
     padding: 25px 15px;
@@ -474,12 +431,7 @@ footer .copyright{
     text-align: center;
 }
 
-#mobile{
-    display: none;
-    list-style: none;
-}
-
-#close{
+nav .fas{
     display: none;
 }
 
@@ -495,51 +447,45 @@ footer .copyright{
         padding: 0px 30px;
     }
 
-    .nav-link #view-cart{
-        margin-top: 50px;
+    #header .navbar ul{
+        position: absolute;
+        top: 120%;
+        right: -300px;
+        width: 300px;
+        background-color: rgba(235, 223, 208, 0.792);
+        border-radius: 30px;
+        transition: right 0.5s;
+        display: none;
     }
 
-    #mobile{
-        display: flex;
-        align-items: center;
+    #header .navbar ul li{
+        width: 300px;
+        padding: 5px 30px;
     }
 
-    #mobile i{
-        color: black;
-        font-size: 30px;
-        padding-left: 40px;
-        cursor: pointer;
+    #header .navbar ul li ul{
+        position: relative;
+        width: 100%;
     }
     
-    #close{
-        display: block;
+    #header .navbar ul li ul li ul{
+        position: relative;
+        left: 0;
+        width: 300px;
+    }
+
+    .navbar .fas{
+        display: none;
         position: absolute;
-        top: 15px;
-        right: 30px;
-        color: black;
-        font-size: 30px;
+        right: 0;
+        margin: -20px 50px;
         cursor: pointer;
-    }
-
-    #mid-outer{
-        background-position: top 100% left 20%;
-    }
-
-    #mid-outer #mid-inner{
-        padding: 160px 70px;
-        top: 20px;
-    }
-
-    #mid-outer #mid-inner h1{
         font-size: 40px;
-    }
-
-    #mid-outer #mid-inner button{
         color: black;
     }
 
-    #mid-outer:hover #mid-inner button{
-        color: white;
+    .navbar .fas.active-bar{
+        display: block;
     }
 
     #feature {
@@ -569,38 +515,37 @@ footer .copyright{
 
 @media screen and (max-width: 450px){
 
-    #navbar{
-        right: -160px;
-        width: 160px;
-    }
-
     #header{
         height: 50px;
     }
-    
-    .logo{
-        width: 110px;
+    #header .navbar ul{
+        position: absolute;
+        top: 125%;
+        right: -100%;
+        width: 100%;
+    }
+
+    #header .navbar ul li{
+        width: 100%;
+    }
+
+    #header .navbar ul li ul li ul{
+        width: 100%;
+    }
+
+    #header .logo{
+        width: 120px;
         height: 80px;
+        margin-top: 5px;
+    }
+
+    #slider{
+        min-height: 250px;
     }
     
-    #mobile i{
-        font-size: 25px;
-    }
-
-    #close{
-        font-size: 25px;
-    }
-    #mid-outer #mid-inner {
-        left: 0;
-    }
-
-    #mid-outer #mid-inner h1{
-        font-size: 35px;
-    }
-
-    #mid-outer #mid-inner{
-        padding: 160px 60px;
-    }
+    #slider figure img{
+        height: 250px;
+    } 
 
     #product1 h2{
         font-size: 35px;
@@ -608,6 +553,38 @@ footer .copyright{
 }
 
 @media screen and (max-width: 650px){
+
+    #header .navbar ul li a{
+        font-size: 20px;
+    }
+
+    #header .navbar ul li ul li a{
+        font-size: 15px;
+    }
+
+    .navbar .fas{
+        margin: -17px 50px;
+        font-size: 35px;
+    }
+
+    .logo{
+        width: 150px;
+        height: 110px;
+        margin-top: 5px;
+     }
+
+    #feature .fe-box{
+        max-width: 200px;
+    }
+
+    #feature .fe-box img{
+        width: 100%;
+        height: 160px;
+    }
+
+    #feature .fe-box h6{
+        font-size: 15px;
+    }
 
     #prodetail{
         display: flex;
@@ -652,71 +629,6 @@ footer .copyright{
     #address .contact-right form input, form textarea, form select{
         width: 100%;
     }
-}
-
-
-/* ========================================================================Shop============================================= */
-
-
-#banner3 .banner-box4{
-    background-image: url("shoping/dry\ dhoop.jpg");
-    color: black;
-    font-size: 30px;
-}
-
-#banner3 .banner-box5{
-    background-image: url("shoping/agarbatti.jpg");
-    color: black;
-    font-size: 30px;
-}
-
-#banner3 .banner-box6{
-    background-image: url("shoping/sambarni.jpg");
-    font-size: 30px;
-}
-
-#banner3 .banner-box7{
-    background-image: url("shoping/floral.jpg");
-    font-size: 30px;
-    color: black;
-}
-
-#banner3 .banner-box8{
-    background-image: url("shoping/offer2.jpg");
-    font-size: 30px;
-    color: rgb(39, 186, 39);
-}
-
-#pageheader{
-    background-image: url("image/address.jpg");
-    height: 40vh;
-    background-size: cover;
-    font-size: 30px;
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    flex-direction: column;
-}
-
-#pageheader.agarbatti-head{
-    background-image: url("shoping/agarbatti.jpg");
-}
-
-#pageheader.dhoop-head{
-    background-image: url("shoping/dry\ dhoop.jpg");
-}
-
-#pageheader.sambrani-head{
-    background-image: url("shoping/sambarni.jpg");
-}
-
-#pageheader.floral-head{
-    background-image: url("shoping/floral.jpg");
-}
-
-#pageheader.offer-head{
-    background-image: url("image/festive.jpg");
 }
 
 /* ===============================================================Blog====================================== */
@@ -1040,17 +952,19 @@ form input, form textarea,form select{
   }
 
 #view-cart{
-    border-radius: 40%;
     padding: 10px 20px;
     font-size: 25px;
-    border: #ddd;
-    background-color: rgb(205, 205, 53);
     cursor: pointer;
+    margin-top: 10px;
+    border: none;
+    text-align: center;
+    border-radius: 20px;
+    background-color: transparent;
 }
 
 #view-cart:hover{
-    background-color: black;
     color: white;
+    background-color: rgba(167, 73, 30, 0.863);
 }
 
 /* #cart{
